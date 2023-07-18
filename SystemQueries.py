@@ -21,4 +21,4 @@ class SystemQueries:
         elif "control panel" in query:
             self.execute_system_command("control")
         else:
-            print(query)
+            pass

@@ -7,6 +7,7 @@ sayer = Sayer()
 listener = Listener()
 system_queries = SystemQueries()
 web_queries = WebQueries()
+
 sayer.say("Hello, I am your personal assistant. How may I help you?")
 
 query = listener.listen()
