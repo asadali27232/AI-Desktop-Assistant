@@ -46,12 +46,5 @@ def execute_system_command(command):
 
 query = listen()
 query = query.lower()
-if "open" in query:
-    if "calculator" in query:
-        os.system("calc.exe")
-    elif "notepad" in query:
-        os.system("notepad.exe")
-    elif "vs code" in query:
-        os.system("code")
-    elif "youtube" in query:
-        webbrowser.open("https://youtube.com")
+if "open youtube" in query:
+    webbrowser.open("https://youtube.com")

@@ -9,4 +9,5 @@
 # print(response.choices[0]["message"]["content"])
 
 import os
-os.system('calc.exe')
+
+os.system("calc.exe")
