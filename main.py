@@ -22,7 +22,7 @@ query = query.lower()
 if "word document" in query:
     sayer.say("Creating a Word Document for you.")
     # Ammend query to force it to write HTML code
-    query = query.replace("word document", "Write HTML document code")
+    query = query.replace("word document", "Write HTML document code") + "\n\n Write at least 1000+ words as content for the document."
 
     # Ask OpenAI to write HTML code
     response = open_ai.ask_ChatGPT(query, words=2000)
