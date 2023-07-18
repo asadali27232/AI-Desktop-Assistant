@@ -8,6 +8,7 @@ class WebQueries:
     def open_site(self, query):
         if "open youtube" in query:
             webbrowser.open("youtube.com")
+            return "opening youtube"
         elif "open google" in query:
             webbrowser.open("google.com")
         elif "open stackoverflow" in query:
@@ -24,11 +25,11 @@ class WebQueries:
             webbrowser.open("linkedin.com")
         elif "open reddit" in query:
             webbrowser.open("reddit.com")
-        elif "open wikipedia":
+        elif "open wikipedia" in query:
             webbrowser.open("wikipedia.com")
         elif "open amazon" in query:
             webbrowser.open("amazon.com")
         elif "open flipkart" in query:
             webbrowser.open("flipkart.com")
         else:
-            pass
+            return False

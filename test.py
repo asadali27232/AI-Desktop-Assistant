@@ -8,6 +8,19 @@
 
 # print(response.choices[0]["message"]["content"])
 
-import os
+# import os
 
-os.system("calc.exe")
+# os.system("calc.exe")
+
+class MyClass:
+    def calculate_sum(self, a, b):
+        return a + b
+
+# Create an instance of the class
+my_object = MyClass()
+
+# Call the class method and store the returned value
+result = my_object.calculate_sum(3, 5)
+
+# Print the returned value
+print(result)
