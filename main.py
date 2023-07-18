@@ -15,6 +15,7 @@ sayer.say("Hello, I am your personal assistant. How may I help you?")
 query = listener.listen()
 
 query = query.lower()
+print("You said:", query)
 
 if "open" in query:
     check_system = system_queries.execute_command(query)
@@ -25,6 +26,7 @@ if "open" in query:
     elif check_system != False:
         sayer.say(check_system)
     else:
-        sayer.say("Sorry, I didn't get that.")
+        sayer.say("System: Sorry, I didn't get that.")
 else:
-    open_ai.ask_ChatGPT(query)
+    # open_ai.ask_ChatGPT(query)
+    pass
