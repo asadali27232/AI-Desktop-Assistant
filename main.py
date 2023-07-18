@@ -15,10 +15,12 @@ sayer.say("Hello, I am your personal assistant. How may I help you?")
 
 sayer.say("Listening")
 query = listener.listen()
+sayer.say("Sure! One moment please.")
 
 query = query.lower()
 
 if "word document" in query:
+    sayer.say("Creating a Word Document for you.")
     # Ammend query to force it to write HTML code
     query = query.replace("word document", "Write HTML document code")
 
