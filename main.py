@@ -1,16 +1,15 @@
+import pypandoc
 from modules.Sayer import Sayer
 from modules.Listener import Listener
 from modules.SystemQueries import SystemQueries
 from modules.WebQueries import WebQueries
 from modules.OpenAI import OpenAI
-from modules.SoundPlayer import SoundPlayer
 
 sayer = Sayer()
 listener = Listener()
 system_queries = SystemQueries()
 web_queries = WebQueries()
 open_ai = OpenAI()
-sound_player = SoundPlayer()
 
 sayer.say("Hello, I am your personal assistant. How may I help you?")
 
@@ -20,8 +19,17 @@ query = listener.listen()
 query = query.lower()
 
 if "word document" in query:
+    # Ammend query to force it to write HTML code
     query = query.replace("word document", "Write HTML document code")
-    print(query)
+
+    # Ask OpenAI to write HTML code
+    response = open_ai.ask_ChatGPT(query, words=1000)
+
+    # Write HTML code to file
+    open("response.html", "w").write("".join(response))
+
+    # Convert HTML to Word Document using Pandoc preserving formatting
+    pypandoc.convert_file("response.html", "docx", outputfile="New Document Created by AI.docx")
 elif "open" in query:
     check_system = system_queries.execute_command(query)
     check_web = web_queries.open_site(query)

@@ -6,7 +6,7 @@ class OpenAI:
         pass
 
     def ask_ChatGPT(self, query, words=100):
-        openai.api_key = "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"
+        openai.api_key = "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"
 
         request = {"role": "user", "content": query}
 
