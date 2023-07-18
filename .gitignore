@@ -1,0 +1,8 @@
+# Ignore the .vscode folder
+.vscode/
+.venv/
+
+# Ignore other project-specific Python folders
+__pycache__/
+dist/
+*.egg-info/
