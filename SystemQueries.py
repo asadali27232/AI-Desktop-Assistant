@@ -5,7 +5,7 @@ class SystemQueries:
     def execute_system_command(self, command):
         os.system(command)
 
-    def process_query(self, query):
+    def execute_command(self, query):
         if "calculator" in query:
             self.execute_system_command("calc.exe")
         elif "notepad" in query:

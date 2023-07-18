@@ -13,4 +13,5 @@ query = listener.listen()
 
 query = query.lower()
 
+system_queries.execute_command(query)
 web_queries.open_site(query)
