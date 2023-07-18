@@ -18,6 +18,9 @@ def say(text):
     speak.Speak(text)
 
 
+say("Hello, I am your personal assistant. What can I do for you?")
+
+
 def listen():
     # Object to recognize text from audio
     r = sr.Recognizer()
