@@ -28,5 +28,4 @@ if "open" in query:
     else:
         sayer.say("System: Sorry, I didn't get that.")
 else:
-    # open_ai.ask_ChatGPT(query)
-    pass
+    open_ai.ask_ChatGPT(query)
