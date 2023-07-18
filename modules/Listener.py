@@ -13,7 +13,7 @@ class Listener:
         with sr.Microphone() as source:
             print("Listening...")
             # Pause for 1 second and create the audio source file
-            r.pause_threshold = 0.5
+            r.pause_threshold = 0.8
             # Listening and storing speech in audio
             audio = r.listen(source)
             try:
