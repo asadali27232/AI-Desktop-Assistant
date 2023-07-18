@@ -1,8 +1,8 @@
-from Sayer import Sayer
-from Listener import Listener
-from SystemQueries import SystemQueries
-from WebQueries import WebQueries
-from OpenAI import OpenAI
+from modules.Sayer import Sayer
+from modules.Listener import Listener
+from modules.SystemQueries import SystemQueries
+from modules.WebQueries import WebQueries
+from modules.OpenAI import OpenAI
 
 sayer = Sayer()
 listener = Listener()
@@ -15,7 +15,6 @@ sayer.say("Hello, I am your personal assistant. How may I help you?")
 query = listener.listen()
 
 query = query.lower()
-print("You said:", query)
 
 if "open" in query:
     check_system = system_queries.execute_command(query)
@@ -28,4 +27,5 @@ if "open" in query:
     else:
         sayer.say("System: Sorry, I didn't get that.")
 else:
-    open_ai.ask_ChatGPT(query)
+    response = open_ai.ask_ChatGPT(query)
+    sayer.say(response)

@@ -20,7 +20,6 @@ class Listener:
                 # Recognizing the text from audio
                 print("Recognizing...")
                 text = r.recognize_google(audio, language="en-in")
-                print("You said: {}".format(text))
                 return text
             except:
                 print("Listener: Sorry, I didn't get that.")

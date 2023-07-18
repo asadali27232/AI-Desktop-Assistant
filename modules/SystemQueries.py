@@ -21,9 +21,6 @@ class SystemQueries:
         elif "paint" in query:
             self.execute_system_command("mspaint")
             return "opening paint"
-        elif "command prompt" in query:
-            self.execute_system_command("cmd.exe")
-            return "opening command prompt"
         elif "control panel" in query:
             self.execute_system_command("control")
             return "opening control panel"
