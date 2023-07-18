@@ -23,7 +23,7 @@ if "word document" in query:
     query = query.replace("word document", "Write HTML document code")
 
     # Ask OpenAI to write HTML code
-    response = open_ai.ask_ChatGPT(query, words=1000)
+    response = open_ai.ask_ChatGPT(query, words=2000)
 
     # Write HTML code to file
     open("response.html", "w").write("".join(response))

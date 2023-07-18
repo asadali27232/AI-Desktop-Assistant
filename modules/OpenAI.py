@@ -15,4 +15,4 @@ class OpenAI:
         response = res.choices[0]["message"]["content"]
 
         # Get the first peragraph only to speak and avoid speaking the whole long text
-        return response.split("\n\n")[0:-1]
+        return response
