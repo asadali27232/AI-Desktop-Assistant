@@ -1,55 +1,19 @@
-import speech_recognition as sr
-import win32com.client as wincl
-import os
+from Sayer import Sayer
+from Listener import Listener
+from SystemQueries import SystemQueries
 import webbrowser
 
+sayer = Sayer()
+listener = Listener()
+system_queries = SystemQueries()
 
-def say(text):
-    # Setting the voice engine for the assistant to speak
-    # Using the built in SAPI's SAPI.SpVoice class
-    speak = wincl.Dispatch("SAPI.SpVoice")
+sayer.say("Hello, I am your personal assistant. How may I help you?")
 
-    # Setting the voice type for the assistant, 0 for male voice, 1 for female voice
-    speak.Voice = speak.GetVoices().Item(1)
+query = listener.listen()
 
-    # Set the speech rate (speed)
-    speak.Rate = 2
-
-    speak.Speak(text)
-
-
-def listen():
-    # Object to recognize text from audio
-    r = sr.Recognizer()
-
-    # Using the microphone as source for input
-    with sr.Microphone() as source:
-        print("Listening...")
-        # Pause for 1 second and create the audio source file
-        r.pause_threshold = 0.5
-        # Listening and storing speech in audio
-        audio = r.listen(source)
-        try:
-            # Recognizing the text from audio
-            print("Recognizing...")
-            text = r.recognize_google(audio, language="en-in")
-            print("You said: {}".format(text))
-            return text
-        except:
-            print("Sorry, I didn't get that.")
-            return "Sorry, I didn't get that."
-
-
-def execute_system_command(command):
-    os.system(command)
-
-
-query = listen()
 query = query.lower()
 if "open youtube" in query:
-    webbrowser.open("https://youtube.com")
+    webbrowser.open("youtube.com")
 
-from SystemQueries import SystemQueries
 
-system_queries = SystemQueries()
 system_queries.process_query(query)
