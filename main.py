@@ -34,7 +34,7 @@ if "word document" in query:
     pypandoc.convert_file("response.html", "docx", outputfile="New Document Created by AI.docx")
 
 elif "code" in query:
-    languages_and_exts = {"python": "py", "java": "java", "c": "c", "c++": "cpp", "c plus plus": "cpp", "c#": "cs", "c sharp": "cs", "javascript": "js", "java script": "js", "typescript": "ts", "html": "html", "css": "css", "php": "php", "ruby": "rb", "go": "go", "swift": "swift", "kotlin": "kt", "rust": "rs", "scala": "scala", "perl": "pl", "r": "r", "sql": "sql", "bash": "sh", "powershell": "ps1", "power shell": "ps1", "lua": "lua", "matlab": "m", "fortran": "f90", "haskell": "hs", "dart": "dart", "groovy": "groovy", "type script": "ts", "elixir": "ex", "clojure": "clj", "jsx": "jsx", "tsx": "tsx", "json": "json", "xml": "xml", "yaml": "yaml", "ini": "ini", "toml": "toml", "markdown": "md", "mark down": "md", "html": "html"}
+    languages_and_exts = {"python": "py", "java": "java", "c language": "c", "c++": "cpp", "c plus plus": "cpp", "c#": "cs", "c sharp": "cs", "javascript": "js", "java script": "js", "typescript": "ts", "html": "html", "css": "css", "php": "php", "ruby": "rb", "go": "go", "swift": "swift", "kotlin": "kt", "rust": "rs", "scala": "scala", "perl": "pl", "r": "r", "sql": "sql", "bash": "sh", "powershell": "ps1", "power shell": "ps1", "lua": "lua", "matlab": "m", "fortran": "f90", "haskell": "hs", "dart": "dart", "groovy": "groovy", "type script": "ts", "elixir": "ex", "clojure": "clj", "jsx": "jsx", "tsx": "tsx", "json": "json", "xml": "xml", "yaml": "yaml", "ini": "ini", "toml": "toml", "markdown": "md", "mark down": "md", "html": "html"}
 
     for language, ext in languages_and_exts.items():
         if language in query:
@@ -69,4 +69,3 @@ elif "search" in query:
 else:
     response = open_ai.ask_ChatGPT(query, words=100)
     sayer.say(response)
-    print(response)
