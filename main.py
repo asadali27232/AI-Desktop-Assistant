@@ -45,3 +45,4 @@ elif "open" in query:
 else:
     response = open_ai.ask_ChatGPT(query, words=100)
     sayer.say(response)
+    print(response)
