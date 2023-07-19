@@ -62,7 +62,7 @@ elif "open" in query:
     elif check_system != False:
         sayer.say(check_system)
     else:
-        sayer.say("System: Sorry, I didn't get that.")
+        sayer.say("Sorry, I didn't get that. Please tell me again.")
 else:
     response = open_ai.ask_ChatGPT(query, words=100)
     sayer.say(response)
