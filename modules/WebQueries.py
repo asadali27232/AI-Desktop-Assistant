@@ -6,9 +6,10 @@ class WebQueries:
         pass
 
     def open_site(self, query):
-        if "open youtube" in query:
-            webbrowser.open("youtube.com")
-            return "opening youtube"
+        if "search" in query:
+            query = query.replace("search", "")
+            webbrowser.open(f"https://www.google.com/search?q={query}")
+            return "searching google"
         elif "open google" in query:
             webbrowser.open("google.com")
             return "opening google"
@@ -42,5 +43,11 @@ class WebQueries:
         elif "open flipkart" in query:
             webbrowser.open("flipkart.com")
             return "opening flipkart"
+        elif "open youtube" in query:
+            webbrowser.open("youtube.com")
+            return "opening youtube"
+        elif "open gmail" in query:
+            webbrowser.open("gmail.com")
+            return "opening gmail"
         else:
             return False

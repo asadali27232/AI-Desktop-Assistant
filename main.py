@@ -62,7 +62,10 @@ elif "open" in query:
     elif check_system != False:
         sayer.say(check_system)
     else:
-        sayer.say("Sorry, I didn't get that. Please tell me again.")
+        sayer.say("Sorry, I didn't get that. Please can you repeat.")
+elif "search" in query:
+    check_web = web_queries.open_site(query)
+    sayer.say(check_web)
 else:
     response = open_ai.ask_ChatGPT(query, words=100)
     sayer.say(response)
