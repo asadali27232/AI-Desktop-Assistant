@@ -11,7 +11,6 @@ class Listener:
 
         # Using the microphone as source for input
         with sr.Microphone() as source:
-            print("Listening...")
             # Pause for 1 second and create the audio source file
             r.pause_threshold = 0.8
             # Listening and storing speech in audio
@@ -22,5 +21,4 @@ class Listener:
                 text = r.recognize_google(audio, language="en-in")
                 return text
             except:
-                print("Listener: Sorry, I didn't get that.")
                 return "Listener: Sorry, I didn't get that."

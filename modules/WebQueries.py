@@ -11,7 +11,7 @@ class WebQueries:
             return "opening youtube"
         elif "open google" in query:
             webbrowser.open("google.com")
-        elif "open stackoverflow" in query:
+        elif "open stack over flow" in query:
             webbrowser.open("stackoverflow.com")
         elif "open github" in query:
             webbrowser.open("github.com")
